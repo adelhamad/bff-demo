@@ -1,0 +1,131 @@
+.container {
+	min-height: 100vh;
+	padding: 0 0.5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.main {
+	padding: 5rem 0;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.footer {
+	width: 100%;
+	height: 100px;
+	border-top: 1px solid #eaeaea;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.footer a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-grow: 1;
+}
+
+.title a:hover,
+.title a:focus,
+.title a:active {
+	text-decoration: underline;
+}
+
+.title {
+	margin: 0 0 1rem 0;
+	line-height: 1.15;
+	font-size: 4rem;
+}
+
+.title,
+.description {
+	text-align: center;
+}
+
+.description {
+	font-size: 1.2rem;
+	margin: 0.6rem 0;
+}
+
+.code {
+	background: #fafafa;
+	border-radius: 5px;
+	padding: 0.75rem;
+}
+
+.grid {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	width: 100%;
+	margin-top: 3rem;
+}
+
+.card {
+	margin: 1rem;
+	padding: 1.5rem;
+	text-align: left;
+	color: inherit;
+	text-decoration: none;
+	border: 1px solid #eaeaea;
+	border-radius: 10px;
+	transition: color 0.15s ease, border-color 0.15s ease;
+	width: 100%;
+}
+
+.card h2 {
+	margin: 0 0 1rem 0;
+	font-size: 1.5rem;
+}
+
+.card p,
+.card code {
+	margin: 0;
+	font-size: 1.25rem;
+	line-height: 1.5;
+}
+
+.logo {
+	height: 1em;
+	margin-left: 0.5rem;
+}
+
+@media (max-width: 600px) {
+	.grid {
+		width: 100%;
+		flex-direction: column;
+	}
+}
+
+.buttons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.button {
+	margin: 1rem;
+	background-color: teal;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+}
+
+.pre {
+	max-width: 80vh;
+	max-height: 600px;
+	overflow: scroll;
+}
