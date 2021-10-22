@@ -58,6 +58,7 @@
 	background: #fafafa;
 	border-radius: 5px;
 	padding: 0.75rem;
+
 }
 
 .grid {
@@ -90,7 +91,7 @@
 .card code {
 	margin: 0;
 	font-size: 1.25rem;
-	line-height: 1.5;
+	line-height: 1.8;
 }
 
 .logo {
@@ -110,10 +111,11 @@
 	align-items: center;
 	justify-content: center;
 	flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
 }
 
 .button {
-	margin: 1rem;
 	background-color: teal;
 	border: none;
 	color: white;

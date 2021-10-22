@@ -30,10 +30,20 @@ const Home: NextPage = () => {
 	}
 
 	const handleMsgRes = () => {
-		console.log('msg')
 		setLoadingResponse(true)
 		axios
-			.get(`${apiPath}/messages`, { params: { action: 'read', read: true } })
+			.get(`${apiPath}/messages`, { params: { action: 'read', read: false } })
+			.then((res) => {
+				setLoadingResponse(false)
+				setResponse(res.data)
+			})
+			.catch(console.error)
+	}
+
+	const handleUsrRes = () => {
+		setLoadingResponse(true)
+		axios
+			.get(`${apiPath}/user`)
 			.then((res) => {
 				setLoadingResponse(false)
 				setResponse(res.data)
@@ -44,7 +54,7 @@ const Home: NextPage = () => {
 	const handleNotiRes = () => {
 		setLoadingResponse(true)
 		axios
-			.get(`${apiPath}/notifications`, { params: { action: 'seen', seen: true } })
+			.get(`${apiPath}/notifications`, { params: { action: 'seen', seen: false } })
 			.then((res) => {
 				setLoadingResponse(false)
 				setResponse(res.data)
@@ -88,7 +98,7 @@ const Home: NextPage = () => {
 							<strong>Joined:</strong> {dayjs(profile.joined).format('YYYY-MM-DD')}
 						</p>
 						<p className={styles.description}>
-							<strong>Last Seen:</strong> {dayjs(profile.last_seen).format('YYYY-MM-DD')}
+							<strong>Last Seen (Last Recieved Message):</strong> {dayjs(profile.last_seen).format('YYYY-MM-DD')}
 						</p>
 						<p className={styles.description}>
 							<strong>New Notifications:</strong> {profile.new_notifications}
@@ -105,6 +115,9 @@ const Home: NextPage = () => {
 				<div className={styles.buttons}>
 					<button onClick={handleBffRes} className={styles.button} type="button">
 						View BFF Response
+					</button>
+					<button onClick={handleUsrRes} className={styles.button} type="button">
+						View User Response
 					</button>
 					<button onClick={handleMsgRes} className={styles.button} type="button">
 						View Messages Service Response
